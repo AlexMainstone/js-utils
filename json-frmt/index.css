@@ -1,0 +1,22 @@
+
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: grey;
+}
+
+#json-field {
+    width: 50%;
+    height: 100%;
+}
+
+#error-msgs {
+    width: auto;
+    height: auto;
+}
+
+.cm-s-default {
+    border: 1px solid #eee;
+    height: 100%;
+    width: 75%;
+}
