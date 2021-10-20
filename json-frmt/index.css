@@ -1,22 +1,102 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background-color: #dddddd;
+  font-family: "Roboto", sans-serif;
+}
 
-html, body {
-    margin: 0;
-    height: 100%;
-    background-color: grey;
+button {
+  font-family: "Roboto", sans-serif;
 }
 
 #json-field {
-    width: 50%;
-    height: 100%;
+  width: 50%;
+  height: 100%;
+}
+
+#textfield {
+  float: left;
+  height: auto;
+  width: 75%;
 }
 
 #error-msgs {
-    width: auto;
-    height: auto;
+  float: right;
+  width: 25%;
+  height: auto;
 }
 
 .cm-s-default {
-    border: 1px solid #eee;
-    height: 100%;
-    width: 75%;
+  border: 1px solid #eee;
+  height: 100%;
+  width: 100%;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.collapsible:after {
+  content: "\02795"; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
+  background-color: #ccc;
+}
+
+
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  margin-right: 0px;
+  padding-right: 0px;
+}
+
+.content .content {
+  background-color: #eaeaea;
+  padding-top: 5px;
+}
+
+.content .collapsible:hover {
+color: white;
+}
+
+.success {
+  background-color: #c6d57e;
+}
+
+.success:hover {
+  background-color: #879154;
+}
+
+.errors {
+  background-color: #d57e7e;
+}
+
+.errors:hover {
+  background-color: #a36060;
 }

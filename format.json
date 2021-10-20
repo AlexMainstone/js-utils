@@ -1,84 +1,32 @@
 {
-    "HtmlOptions": {
-        "IncludeOptions": false,
-        "AsHtml": false,
-        "ImageUrl": "https://sampleimageforthecaronsale.png ",
-        "ReturnUrl": null,
-        "Make": null,
-        "Model": null,
-        "Derivative": null,
-        "Channel": null,
-        "RegDate": null,
-        "DealerId": null,
-        "VehicleMileage": null,
-        "EncryptedVrm": null
-    },
+    "Debug": false,
     "Credentials": {
-        "Username": "www.rockinghamcars.co.uk",
-        "Mode": 0
+      "Username": "www.gregmitchellmotors.com",
+      "Mode": 0
     },
-    "DealershipEnrichment": {
-        "IpAddress": "188.29.164.138",
-        "Email": null,
-        "Postcode": "BL40PJ",
-        "SearchMeta": "{\"IsPaymentSearch\":\"True\",\"MinPrice\": \"-1\",\"MaxPrice\":\"-1\" ,\"MinPaymentMonthlyCost\":\"-1\",\"MaxPaymentMonthlyCost\":\"-1\"}",
-        "UserAgent": null,
-        "UserGenerated": true,
-        "TraceRequest": false,
-        "PersistRequestResponse": true
+    "Parameters": {
+      "Terms": [60],
+      "AnnualMileages": [8000],
+      "Deposits": [2895],
+      "CreditTiers": [""]
     },
-    "QuoteRequests": [{
-        "ProductRequestUID": null,
-        "IsPlatformProductRequest": false,
-        "QuoteeUID": "4dd65af1-5d18-4b73-9c3e-897832c9bcc9",
-        "GlobalRequestSettings": null,
-        "GlobalRequestParameters": {
-            "Rate": 0,
-            "RateType": "Default",
-            "Commission": 0,
-            "CommissionType": "Default",
-            "ComputationPath": "Default",
-            "Term": 54,
-            "TermUnit": "Default",
-            "PaymentRangeFrom": 0,
-            "PaymentRangeTo": 0,
-            "RegularPayment": 0
-        },
-        "Requests": [{
-            "CreditTier": "",
-            "Figures": {
-                "CashPrice": 7000,
-                "CashDeposit": 1000,
-                "Asset": {
-                    "ManualResidualValue": 0,
-                    "ResidualValueYear": 0,
-                    "ResidualValueMonth": 0,
-                    "AnnualDistance": 10000,
-                    "PartExchange": 0,
-                    "OutstandingSettlement": 0,
-                    "VATIncluded": "None",
-                    "VATQualifying": "None",
-                    "Extras": null
-                }
-            },
-            "Asset": {
-                "CurrentOdometerReading": 1300,
-                "RegistrationDate": "04/06/2017",
-                "RegistrationMark": "CX17HHA",
-                "Condition": "Default",
-                "Source": "Default",
-                "Identity": "CX17HHA",
-                "IdentityType": "VRM",
-                "StockIdentity": "39736298",
-                "StockingDate": null,
-                "StockLocation": null,
-                "Class": "Car",
-                "CubicCentimetres": 0,
-                "EntityType": "None"
-            },
-            "RequestSettings": null,
-            "RequestParameters": null
-        }]
-    }],
-    "PlatformMeta": null
-}
+    "VehicleRequests": [
+      {
+        "Dealer": "6B36BD8B-5332-4A41-A2EB-C21BC6C5AFF0",
+        "Vehicle": {
+          "CashPrice": 28945, //The Cash Price of the Vehicle
+          "IsNew": false,
+          "Identifier": "MT19DPY", //The CAP ID of the requested vehicle, CAP Code may also be used here.
+          "IdentifierType": "VRM", //Default to RVC, meaning that CAP data will be used to dictate the calculation.
+          "Type": "Car", //The class of vehicle requested - (  Car  //  Motorbike  //  LCV  )
+          "StockId": null,
+          "RegistrationNumber": "MT19DPY", //The Vehicle Registration Number.
+          "CurrentMileage": 274, //The Mileage of the Vehicle.
+          "RegistrationDate": "29-03-2019", //The registration date of the Vehicle.
+          "ProductUid": null,
+          "VATIncluded": false,
+          "VATQualifying": false
+        }
+      }
+    ]
+  }
