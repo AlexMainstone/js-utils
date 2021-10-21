@@ -34,9 +34,9 @@ function removeCollapsible() {
     document.getElementById("error-msgs").innerHTML = "";
 }
 
-var json_obj = null;
-if (test != null) {
-    json_obj = JSON.parse(test);
+function parseJSON(text) {
+    var json_obj = null;
+    json_obj = JSON.parse(text);
     // let results = json_obj.QuoteResults.Results;
     var product_groups = json_obj["QuoteResults"][0]["Results"][0]["ProductGroups"];
 
@@ -86,10 +86,16 @@ if (test != null) {
     error_div.innerHTML = error_inner;
     setupCollapsible();
 
-    params.value = JSON.stringify(json_obj, null, 3);
+    return JSON.stringify(json_obj, null, 3);
+}
+
+if (test != null) {
+    params.value = parseJSON(test);
 }
 
 var editor = CodeMirror(document.getElementById("textfield"), params);
+
 document.getElementById("generate").addEventListener("click", function () {
     removeCollapsible();
+    editor.setValue(parseJSON(editor.getValue()));
 });
