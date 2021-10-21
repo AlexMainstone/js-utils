@@ -46,6 +46,29 @@ button {
   font-size: 15px;
 }
 
+#ctrl-btns {
+  float: right;
+  width: 25%;
+  height: auto;
+}
+
+#ctrl-btns button {
+  background-color: #aaa;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 20px;
+}
+
+#ctrl-btns button:hover {
+background-color: #666;
+color: white;
+}
+
 .collapsible:after {
   content: "\02795"; /* Unicode character for "plus" sign (+) */
   font-size: 13px;

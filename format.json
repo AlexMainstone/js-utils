@@ -1,32 +1,32 @@
 {
-    "Debug": false,
-    "Credentials": {
-      "Username": "www.gregmitchellmotors.com",
-      "Mode": 0
-    },
-    "Parameters": {
-      "Terms": [60],
-      "AnnualMileages": [8000],
-      "Deposits": [2895],
-      "CreditTiers": [""]
-    },
-    "VehicleRequests": [
-      {
-        "Dealer": "6B36BD8B-5332-4A41-A2EB-C21BC6C5AFF0",
-        "Vehicle": {
-          "CashPrice": 28945, //The Cash Price of the Vehicle
-          "IsNew": false,
-          "Identifier": "MT19DPY", //The CAP ID of the requested vehicle, CAP Code may also be used here.
-          "IdentifierType": "VRM", //Default to RVC, meaning that CAP data will be used to dictate the calculation.
-          "Type": "Car", //The class of vehicle requested - (  Car  //  Motorbike  //  LCV  )
-          "StockId": null,
-          "RegistrationNumber": "MT19DPY", //The Vehicle Registration Number.
-          "CurrentMileage": 274, //The Mileage of the Vehicle.
-          "RegistrationDate": "29-03-2019", //The registration date of the Vehicle.
-          "ProductUid": null,
-          "VATIncluded": false,
-          "VATQualifying": false
-        }
-      }
-    ]
-  }
+  "hasQuoteResults": true,
+  "QuotedResultsUID": "9a023fe3-4ddf-4337-8d40-8b90e49dc660",
+  "QuoteResults": [
+    {
+      "hasResults": false,
+      "ProductRequestUID": "25602492-7204-4543-a054-10d87f206e85",
+      "QuotedResultUID": null,
+      "QuoteeUID": "955bc42a-1fe4-4348-bbfe-fe2fede27bdb",
+      "QuoteRequest": null,
+      "Results": null,
+      "Errors": {
+        "hasPrivateErrors": true,
+        "hasPublicErrors": false,
+        "PrivateErrors": [
+          {
+            "Message": "ProductRequestUID not submitted and no default for Quotee set. i.e. Request default not found for Quotee and Mode.",
+            "Number": 3
+          }
+        ]
+      },
+      "hasErrors": true,
+      "hasWarnings": false,
+      "Warnings": null
+    }
+  ],
+  "ResponseUID": "fc9c1e07-de63-4c84-9365-5105bb85199e",
+  "Errors": null,
+  "hasErrors": false,
+  "hasWarnings": false,
+  "Warnings": null
+}
