@@ -19,9 +19,10 @@ button {
   float: left;
   height: auto;
   width: 75%;
+  min-height: 60px;
 }
 
-#error-msgs {
+#right-side {
   float: right;
   width: 25%;
   height: auto;
@@ -30,6 +31,7 @@ button {
 .cm-s-default {
   height: 100%;
   width: 100%;
+  min-height: 60px;
 }
 
 /* Style the button that is used to open and close the collapsible content */
@@ -47,7 +49,7 @@ button {
 
 #ctrl-btns {
   float: right;
-  width: 25%;
+  width: 100%;
   height: auto;
 }
 
@@ -121,4 +123,14 @@ color: white;
 
 .errors:hover {
   background-color: #a36060;
+}
+
+#navbar {
+  padding: 5px;
+  background-color: rgb(43, 43, 43);
+}
+
+#navbar h1 {
+  margin-left: 20px;
+  color: white;
 }
