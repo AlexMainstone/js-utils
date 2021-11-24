@@ -23,6 +23,13 @@ function renderNoCopy(instance, td, row, col, prop, value, cellProperties) {
 function createTable() {
     var obj = JSON.parse(document.getElementById("json").value);
     var data = [];
+    
+    // Alphebetically sort Finance products
+    obj.FinanceProducts.sort(function(a, b) {
+        var ua = a.Description.toUpperCase();
+        var ub = b.Description.toUpperCase();
+        return (ua < ub) ? -1 : (ua > ub) ? 1 : 0;
+    });
     for (var i = 0; i < obj.FinanceProducts.length; i++) {
         var product = obj.FinanceProducts[i];
         var desc = product.Description;
@@ -31,7 +38,7 @@ function createTable() {
         // Find the fees
         var admin_fee = product.Fees[0].AdminFee.Amount.Price;
         var otp_fee = product.Fees[0].OptionFee.Amount.Price;
-        var spread = "N"; //TODO: this
+        var spread = "N"; 
         for(var j = 0; j < product.Fees.length; j++) {
             var afee = product.Fees[j].AdminFee;
             var ofee = product.Fees[j].OptionFee;
@@ -45,6 +52,8 @@ function createTable() {
         }
 
         // data.push([product.Description, product.ProductLimits.MinAdvance, product.ProductLimits.MaxAdvance, product.ProductLimits.MinTerm, product.ProductLimits.MaxTerm]);
+        // Sort rates ascending
+        product.Rates.sort((a, b) => {return a.StartingRate - b.StartingRate;})
         for(var j = 0; j < product.Rates.length; j++) {
             var rate = product.Rates[j];
             data.push([desc, rate_type, spread, admin_fee, otp_fee, rate.RateCriteria.MinAdvance, rate.RateCriteria.MaxAdvance, rate.RateCriteria.MinTerm, rate.RateCriteria.MaxTerm, rate.RateCriteria.MinVehicleInceptionAge, rate.RateCriteria.MaxVehicleInceptionAge, rate.StartingRate, rate.StartingRate, "% Adv", rate.CommissionAsPercentageOfAdvance, rate.CommissionCappings.MaximumCommissionAmount.Price, rate.CommissionCappings.MaximumPercentageOfCharges, product.ProductLimits.MaxCommissionTerm]);
