@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Close Formatter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable@11.0.1/dist/handsontable.css">
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@11.0.1/dist/handsontable.full.min.js" integrity="sha256-QcAs43LueWkZzvEdWFBLaGWFt4dx4jrOttXX2veODdw=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="top">
+        <h1>Close Formatter</h1>
+        <input id="json" onkeypress="inputPress()" onpaste="inputPress()" />
+        <button id="submit" onclick="createTable()">submit!</button>
+    </div>
+    <div id="sheet"></div>
+    <script src="close-frmt.js"></script>
+</body>
+</html>

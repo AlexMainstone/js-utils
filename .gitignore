@@ -1,3 +1,5 @@
 format.json
 Notes.md
 .DS_Store
+/projects
+/test

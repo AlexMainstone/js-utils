@@ -42,3 +42,4 @@ function generateButton() {
     final_url = final_url.slice(0, -1);
     document.getElementById("txtOutput").value = final_url;
 }
+
