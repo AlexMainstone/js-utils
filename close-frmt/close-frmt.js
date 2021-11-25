@@ -21,7 +21,7 @@ function renderGlobal(instance, td, row, col, prop, value, cellProperties) {
         td.style.fontWeight = "bold";
     } else if(col === 4 && value != 10) {
         td.style.fontWeight = "bold";
-    } else if(col === 0 && value.split(" ")[0] === "CSB") {
+    } else if(col === 0 && value.split(" ")[0] !== "Close") {
         td.style.background = "#BB9999";
         td.style.color = "#FF0000";
     }
