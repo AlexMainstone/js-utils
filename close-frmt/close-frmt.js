@@ -21,7 +21,7 @@ function renderGlobal(instance, td, row, col, prop, value, cellProperties) {
         td.style.fontWeight = "bold";
     } else if(col === 4 && value != 10) {
         td.style.fontWeight = "bold";
-    } else if(col === 0 && value === "CSB Flat Rate Model Phase 3") {
+    } else if(col === 0 && value.split(" ")[0] === "CSB") {
         td.style.background = "#BB9999";
         td.style.color = "#FF0000";
     }
@@ -36,6 +36,29 @@ function renderNoCopy(instance, td, row, col, prop, value, cellProperties) {
 function createTable() {
     var obj = JSON.parse(document.getElementById("json").value);
     var data = [];
+    
+    // Change titles
+    for (var i = 0; i < obj.FinanceProducts.length; i++) {
+        var distance = obj.FinanceProducts[i].Description.split(" ")[1] == "Distance";
+
+        switch(obj.FinanceProducts[i].Description.split(" ")[0]) {
+            case "CS":
+                obj.FinanceProducts[i].Description = "Close CS";
+                break;
+            case "HP":
+                obj.FinanceProducts[i].Description = "Close HP";
+                break;
+            case "HPB":
+                obj.FinanceProducts[i].Description = "Close HP + Balloon";
+                break;
+            case "PCP":
+                obj.FinanceProducts[i].Description = "Close PCP";
+                break;
+        }
+        if (distance) {
+                obj.FinanceProducts[i].Description += " Distance Sale";
+        }
+    }
     
     // Alphebetically sort Finance products
     obj.FinanceProducts.sort(function(a, b) {
