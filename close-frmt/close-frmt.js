@@ -3,8 +3,10 @@ function renderGreen(instance, td, row, col, prop, value, cellProperties) {
     
     if(value === "Y") {
         td.style.background = "#00FF00";
-    } else {
+    } else if(value === "N") {
         td.style.background = "#FF0000";
+    } else {
+        td.style.background = "#999999";
     }
 }
 
@@ -12,6 +14,17 @@ function renderGlobal(instance, td, row, col, prop, value, cellProperties) {
     Handsontable.renderers.TextRenderer.apply(this, arguments);
     td.style.background = "#999999";
     td.style.color = "#FFFFFF";
+    
+    if(col === 1 && value !== "APR") {
+        td.style.fontWeight = "bold";
+    } else if(col === 3 && value != 0) {
+        td.style.fontWeight = "bold";
+    } else if(col === 4 && value != 10) {
+        td.style.fontWeight = "bold";
+    } else if(col === 0 && value === "CSB Flat Rate Model Phase 3") {
+        td.style.background = "#BB9999";
+        td.style.color = "#FF0000";
+    }
 }
 
 function renderNoCopy(instance, td, row, col, prop, value, cellProperties) {
@@ -26,8 +39,8 @@ function createTable() {
     
     // Alphebetically sort Finance products
     obj.FinanceProducts.sort(function(a, b) {
-        var ua = a.Description.toUpperCase();
-        var ub = b.Description.toUpperCase();
+        var ua = a.Description.toUpperCase().replace("CSB", "ZZZ");
+        var ub = b.Description.toUpperCase().replace("CSB", "ZZZ");
         return (ua < ub) ? -1 : (ua > ub) ? 1 : 0;
     });
     for (var i = 0; i < obj.FinanceProducts.length; i++) {
@@ -51,17 +64,13 @@ function createTable() {
             }
         }
 
-        // data.push([product.Description, product.ProductLimits.MinAdvance, product.ProductLimits.MaxAdvance, product.ProductLimits.MinTerm, product.ProductLimits.MaxTerm]);
         // Sort rates ascending
-        product.Rates.sort((a, b) => {return a.StartingRate - b.StartingRate;})
+        product.Rates.sort((a, b) => {return a.RateCriteria.MinAdvance - b.RateCriteria.MinAdvance;})
+
         for(var j = 0; j < product.Rates.length; j++) {
             var rate = product.Rates[j];
             data.push([desc, rate_type, spread, admin_fee, otp_fee, rate.RateCriteria.MinAdvance, rate.RateCriteria.MaxAdvance, rate.RateCriteria.MinTerm, rate.RateCriteria.MaxTerm, rate.RateCriteria.MinVehicleInceptionAge, rate.RateCriteria.MaxVehicleInceptionAge, rate.StartingRate, rate.StartingRate, "% Adv", rate.CommissionAsPercentageOfAdvance, rate.CommissionCappings.MaximumCommissionAmount.Price, rate.CommissionCappings.MaximumPercentageOfCharges, product.ProductLimits.MaxCommissionTerm]);
-            desc = "";
-            rate_type = "";
-            admin_fee = "";
-            otp_fee = "";
-            spread = "";
+            desc = rate_type = admin_fee = otp_fee = spread = "";
         }
     }
     console.log(obj);
