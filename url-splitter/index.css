@@ -10,7 +10,7 @@ input {
     width: 20%;
 }
 
-#txtInput {
+#txtInput, #txtOutput {
     font-size: 200%;
     display: block;
     margin-left: auto;
@@ -32,6 +32,16 @@ table {
 
 body {
     text-align: center;
+    display: flex;
+    height: 100%;
+}
+
+#left {
+    flex: 1;
+}
+
+#right {
+    flex: 1;
 }
 
 #compile {

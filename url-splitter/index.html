@@ -5,12 +5,16 @@
         <title>url splitter</title>
     </head>
     <body>
-        <input type="text" id="txtInput"><br><br>
-        <div id="fields">
-
+        <div id="left">
+            <input type="text" id="txtInput"><br><br>
+            <div id="fields"></div>
+            <button type="button" id="compile" onclick="generateButton()">Generate URL</button>
         </div>
-        <button type="button" id="compile" onclick="generateButton()">Generate URL</button>
-        <input type="text" id="txtOutput"><br><br>
-        <script src="split.js"></script>
+
+        <div id="right">
+            <input type="text" id="txtOutput"><br><br>
+            <div id="widget"></div>
+            <script src="split.js"></script>
+        </div>
     </body>
 </html>

@@ -31,8 +31,8 @@ input.addEventListener("keyup", function(event) {
 })
 
 
-var table = document.getElementById("table");
 function generateButton() {
+var table = document.getElementById("table");
     let final_url = input.value.split("?")[0] + "?";
     for(let i = 0, row; row = table.rows[i]; i++) {
         let name = row.cells[0].innerHTML;
@@ -41,5 +41,6 @@ function generateButton() {
     }
     final_url = final_url.slice(0, -1);
     document.getElementById("txtOutput").value = final_url;
+    document.getElementById("widget").innerHTML = '<iframe style="width: 770px; height: 1000px;" src="' + final_url + '" id="iv-finance-widget" name="iv-finance-widget" ></iframe>';
 }
 
